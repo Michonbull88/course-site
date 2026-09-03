@@ -7,7 +7,7 @@ const defaultCourses = [
     price: "$199",
     duration: "5 modules",
     description: "A general course structure for onboarding learners into core business concepts, workflows, and practical exercises.",
-    image: "assets/course-platform-hero.png",
+    image: "course-platform-hero.png",
     videoUrl: "",
     lessons: ["Welcome and course outcomes", "Core concepts", "Practical workbook", "Assessment preparation"],
     documents: [
@@ -23,7 +23,7 @@ const defaultCourses = [
     price: "$249",
     duration: "7 modules",
     description: "A practical training path for managers, supervisors, or teams that need structured leadership development.",
-    image: "assets/course-platform-hero.png",
+    image: "course-platform-hero.png",
     videoUrl: "",
     lessons: ["Leadership styles", "Communication routines", "Decision making", "Team performance"],
     documents: [
@@ -38,7 +38,7 @@ const defaultCourses = [
     price: "$149",
     duration: "4 modules",
     description: "A flexible placeholder for any software, digital literacy, online tools, or workplace technology course.",
-    image: "assets/course-platform-hero.png",
+    image: "course-platform-hero.png",
     videoUrl: "",
     lessons: ["Getting started", "Tool walkthrough", "Practice tasks", "Next steps"],
     documents: [
