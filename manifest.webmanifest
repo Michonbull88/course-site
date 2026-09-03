@@ -1,0 +1,17 @@
+{
+  "name": "CourseHub Training App",
+  "short_name": "CourseHub",
+  "description": "Responsive training course web app with videos, downloads, registration, newsletter, and purchase sections.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f6f7f4",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "assets/coursehub-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

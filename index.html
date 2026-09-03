@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive course training web app with video, downloads, registration, newsletter signup, and purchase sections.">
+  <meta name="theme-color" content="#0f766e">
+  <title>CourseHub Training App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="course-app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="CourseHub home">
+        <span class="brand-mark">C</span>
+        <span>
+          <strong>CourseHub</strong>
+          <small>Training portal</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#courses">Courses</a>
+        <a href="#learning">Video</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#register">Register</a>
+      </nav>
+
+      <a class="topbar-action" href="#purchase">Buy course</a>
+    </header>
+
+    <main id="home">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-media">
+          <img src="assets/course-platform-hero.png" alt="Online training course materials shown on a laptop and tablet">
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">General training courses</p>
+          <h1 id="hero-title">Launch courses with video, downloads, registration, and checkout.</h1>
+          <p class="hero-copy">Replace the sample content with your own course titles, images, videos, and documents directly in this web app prototype.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#courses">Browse courses</a>
+            <a class="secondary-button" href="#content-manager">Add content</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-band" aria-label="Course highlights">
+        <div>
+          <strong id="courseCount">0</strong>
+          <span>available courses</span>
+        </div>
+        <div>
+          <strong>12+</strong>
+          <span>document types</span>
+        </div>
+        <div>
+          <strong>Mobile</strong>
+          <span>web app ready</span>
+        </div>
+        <div>
+          <strong>Local</strong>
+          <span>signup storage</span>
+        </div>
+      </section>
+
+      <section class="workspace-grid" id="courses" aria-labelledby="courses-title">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogue</p>
+          <h2 id="courses-title">Training courses</h2>
+        </div>
+        <div class="course-layout">
+          <aside class="filter-panel" aria-label="Course filters">
+            <label for="courseSearch">Search courses</label>
+            <input id="courseSearch" type="search" placeholder="Search by title or category">
+
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter">
+              <option value="all">All categories</option>
+            </select>
+
+            <label for="levelFilter">Level</label>
+            <select id="levelFilter">
+              <option value="all">All levels</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </aside>
+          <div class="course-list" id="courseList" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="detail-grid" id="learning" aria-labelledby="selectedCourseTitle">
+        <article class="video-panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Course preview</p>
+            <h2 id="selectedCourseTitle">Course video</h2>
+          </div>
+          <div class="video-frame" id="videoFrame"></div>
+          <div class="lesson-list" id="lessonList"></div>
+        </article>
+
+        <aside class="purchase-panel" id="purchase" aria-labelledby="purchase-title">
+          <p class="eyebrow">Purchase</p>
+          <h2 id="purchase-title">Buy this course</h2>
+          <p id="purchaseSummary">Select a course to view purchase details.</p>
+          <div class="price-line">
+            <span>Course price</span>
+            <strong id="coursePrice">$0</strong>
+          </div>
+          <form id="purchaseForm" class="stacked-form">
+            <label for="buyerName">Full name</label>
+            <input id="buyerName" name="buyerName" autocomplete="name" required>
+            <label for="buyerEmail">Email address</label>
+            <input id="buyerEmail" name="buyerEmail" type="email" autocomplete="email" required>
+            <label for="paymentOption">Payment option</label>
+            <select id="paymentOption" name="paymentOption">
+              <option>Card payment</option>
+              <option>Invoice request</option>
+              <option>Bank transfer</option>
+            </select>
+            <button class="primary-button full-width" type="submit">Start purchase</button>
+          </form>
+          <p class="form-note" id="purchaseMessage" role="status"></p>
+        </aside>
+      </section>
+
+      <section class="downloads-section" id="downloads" aria-labelledby="downloads-title">
+        <div class="section-heading">
+          <p class="eyebrow">Resources</p>
+          <h2 id="downloads-title">Documentation downloads</h2>
+        </div>
+        <div class="download-list" id="downloadList"></div>
+      </section>
+
+      <section class="forms-grid" id="register" aria-label="Registration and updates">
+        <article class="form-panel">
+          <p class="eyebrow">User access</p>
+          <h2>Register as a user</h2>
+          <form id="registerForm" class="stacked-form">
+            <label for="registerName">Full name</label>
+            <input id="registerName" name="registerName" autocomplete="name" required>
+            <label for="registerEmail">Email address</label>
+            <input id="registerEmail" name="registerEmail" type="email" autocomplete="email" required>
+            <label for="registerInterest">Course interest</label>
+            <select id="registerInterest" name="registerInterest"></select>
+            <label class="check-row">
+              <input type="checkbox" name="updates" checked>
+              <span>Send me course updates and new release notices</span>
+            </label>
+            <button class="primary-button full-width" type="submit">Create registration</button>
+          </form>
+          <p class="form-note" id="registerMessage" role="status"></p>
+        </article>
+
+        <article class="newsletter-panel">
+          <p class="eyebrow">Newsletter</p>
+          <h2>Get updates</h2>
+          <p>Collect interested learners before a course is ready, then export the local signup list from your browser storage when you connect a backend.</p>
+          <form id="newsletterForm" class="inline-form">
+            <input id="newsletterEmail" type="email" placeholder="Email address" autocomplete="email" required>
+            <button class="secondary-button" type="submit">Subscribe</button>
+          </form>
+          <p class="form-note" id="newsletterMessage" role="status"></p>
+        </article>
+      </section>
+
+      <section class="manager-section" id="content-manager" aria-labelledby="manager-title">
+        <div class="section-heading">
+          <p class="eyebrow">Content manager</p>
+          <h2 id="manager-title">Add your own course content</h2>
+        </div>
+        <form id="courseForm" class="manager-form">
+          <div>
+            <label for="newTitle">Course title</label>
+            <input id="newTitle" required placeholder="Example: Workplace Safety Basics">
+          </div>
+          <div>
+            <label for="newCategory">Category</label>
+            <input id="newCategory" required placeholder="Leadership, Finance, Safety">
+          </div>
+          <div>
+            <label for="newLevel">Level</label>
+            <select id="newLevel">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+          <div>
+            <label for="newPrice">Price</label>
+            <input id="newPrice" required placeholder="$199">
+          </div>
+          <div class="wide-field">
+            <label for="newDescription">Description</label>
+            <textarea id="newDescription" required rows="3" placeholder="Write a short course overview"></textarea>
+          </div>
+          <div>
+            <label for="newVideoUrl">Video URL</label>
+            <input id="newVideoUrl" placeholder="YouTube, Vimeo, or direct MP4 link">
+          </div>
+          <div>
+            <label for="newVideoUpload">Video file</label>
+            <input id="newVideoUpload" type="file" accept="video/*">
+          </div>
+          <div>
+            <label for="newImageUpload">Course image</label>
+            <input id="newImageUpload" type="file" accept="image/*">
+          </div>
+          <div>
+            <label for="newDocUpload">Documentation file</label>
+            <input id="newDocUpload" type="file">
+          </div>
+          <button class="primary-button full-width wide-field" type="submit">Add course</button>
+        </form>
+      </section>
+
+      <section class="mobile-showcase" aria-labelledby="mobile-title">
+        <div class="section-heading">
+          <p class="eyebrow">Mobile web app</p>
+          <h2 id="mobile-title">Learner view for phones</h2>
+        </div>
+        <div class="phone-preview" aria-label="Mobile web app preview">
+          <div class="phone-status"></div>
+          <div class="phone-content">
+            <strong id="mobileCourseTitle">Course title</strong>
+            <span id="mobileCourseMeta">Lessons and documents</span>
+            <div class="phone-video"></div>
+            <button class="primary-button full-width" type="button">Continue learning</button>
+            <button class="secondary-button full-width" type="button">Download docs</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#courses">Courses</a>
+      <a href="#learning">Video</a>
+      <a href="#downloads">Docs</a>
+      <a href="#register">Join</a>
+    </nav>
+  </div>
+
+  <script src="course-app.js"></script>
+</body>
+</html>
