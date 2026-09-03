@@ -8,7 +8,7 @@
   "theme_color": "#0f766e",
   "icons": [
     {
-      "src": "assets/coursehub-icon-512.png",
+      "src": "coursehub-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

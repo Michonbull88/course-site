@@ -23,7 +23,7 @@ const defaultCourses = [
     price: "$249",
     duration: "7 modules",
     description: "A practical training path for managers, supervisors, or teams that need structured leadership development.",
-    image: "course-platform-herocopy4.png",
+    image: "course-platform-hero.png",
     videoUrl: "",
     lessons: ["Leadership styles", "Communication routines", "Decision making", "Team performance"],
     documents: [
@@ -38,7 +38,7 @@ const defaultCourses = [
     price: "$149",
     duration: "4 modules",
     description: "A flexible placeholder for any software, digital literacy, online tools, or workplace technology course.",
-    image: "course-platform-hero copy 2.png",
+    image: "course-platform-hero.png",
     videoUrl: "",
     lessons: ["Getting started", "Tool walkthrough", "Practice tasks", "Next steps"],
     documents: [
@@ -381,7 +381,7 @@ document.getElementById("courseForm").addEventListener("submit", async (event) =
   const imageFile = document.getElementById("newImageUpload").files[0];
   const videoFile = document.getElementById("newVideoUpload").files[0];
   const title = document.getElementById("newTitle").value.trim();
-  const image = imageFile ? await fileToDataUrl(imageFile) : "assets/course-platform-hero.png";
+  const image = imageFile ? await fileToDataUrl(imageFile) : "course-platform-hero.png";
   const videoUrl = videoFile ? await fileToDataUrl(videoFile) : document.getElementById("newVideoUrl").value.trim();
   const newCourse = {
     id: `${slugify(title)}-${Date.now()}`,

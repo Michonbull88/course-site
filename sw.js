@@ -1,11 +1,11 @@
-const CACHE_NAME = "coursehub-training-v1";
+const CACHE_NAME = "coursehub-training-v2";
 const APP_ASSETS = [
   "index.html",
   "course-app.css",
   "course-app.js",
   "manifest.webmanifest",
-  "assets/course-platform-hero.png",
-  "assets/coursehub-icon-512.png"
+  "course-platform-hero.png",
+  "coursehub-icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
