@@ -38,7 +38,7 @@ const defaultCourses = [
     price: "$149",
     duration: "4 modules",
     description: "A flexible placeholder for any software, digital literacy, online tools, or workplace technology course.",
-    image: "course-platform-hero.png",
+    image: "course-platform-hero copy 2.png",
     videoUrl: "",
     lessons: ["Getting started", "Tool walkthrough", "Practice tasks", "Next steps"],
     documents: [
