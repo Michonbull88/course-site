@@ -23,7 +23,7 @@ const defaultCourses = [
     price: "$249",
     duration: "7 modules",
     description: "A practical training path for managers, supervisors, or teams that need structured leadership development.",
-    image: "course-platform-hero.png",
+    image: "course-platform-hero copy.png",
     videoUrl: "",
     lessons: ["Leadership styles", "Communication routines", "Decision making", "Team performance"],
     documents: [
